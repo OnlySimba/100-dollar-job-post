@@ -1,0 +1,3 @@
+"use client";
+import Link from "next/link";import { useState } from "react";import { Menu,X } from "lucide-react";
+export function Header(){const [open,setOpen]=useState(false);return <header><div className="wrap nav"><Link href="/" className="brand"><span>$100</span> Job Post</Link><button className="menu" onClick={()=>setOpen(!open)} aria-label="Menu">{open?<X/>:<Menu/>}</button><nav className={open?"open":""} onClick={()=>setOpen(false)}><Link href="/jobs">Browse jobs</Link><Link href="/how-it-works">How it works</Link><Link href="/dashboard">Dashboard</Link><Link href="/profile">Profile</Link><Link href="/post" className="button small">Post a $100 job</Link></nav></div></header>}
